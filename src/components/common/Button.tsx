@@ -1,34 +1,46 @@
-import React from "react";
-
 type ButtonProps = {
   border: string;
   color: string;
+  cursor: string;
+  fontSize?: string;
+  fontColor?: string;
   height: string;
   onClick?: () => void;
-  radius: string;
+  radius?: string;
   text: string;
+  type?: "submit" | "reset";
   width: string;
-  cursor: string;
-  fontSize: string;
-  fontColor: string;
 };
 
-const Button = (props: ButtonProps) => {
+const Button = ({
+  border,
+  color,
+  cursor,
+  fontSize,
+  fontColor,
+  height,
+  onClick,
+  radius,
+  text,
+  type,
+  width,
+}: ButtonProps) => {
   return (
     <button
-      onClick={props.onClick}
+      onClick={onClick}
+      type={type}
       style={{
-        backgroundColor: props.color,
-        border: props.border,
-        borderRadius: props.radius,
-        height: props.height,
-        width: props.width,
-        cursor: props.cursor,
-        fontSize: props.fontSize,
-        color: props.fontColor,
+        border: border,
+        backgroundColor: color,
+        borderRadius: radius,
+        height: height,
+        width: width,
+        cursor: cursor,
+        fontSize: fontSize,
+        color: fontColor,
       }}
     >
-      {props.text}
+      {text}
     </button>
   );
 };
