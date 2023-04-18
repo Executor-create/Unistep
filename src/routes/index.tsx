@@ -3,13 +3,19 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import Signup from "../pages/Signup/Signup";
+import Profile from "../pages/Profile/Profile";
+import Lessons from "../pages/Lessons/Lessons";
+import Lesson from "../pages/Lesson/Lesson";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="*" element={<NotFound />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/lessons" element={<Lessons />} />
+      <Route path="/lessons/lesson/:id" element={<Lesson />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
