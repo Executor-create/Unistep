@@ -1,5 +1,5 @@
 import { Path, UseFormRegister, FieldError } from "react-hook-form";
-import { FormValues } from "../../types/form";
+import { FormValues } from "../../types/types";
 
 type InputProps = {
   label: Path<FormValues>;
