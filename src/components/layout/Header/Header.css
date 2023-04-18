@@ -1,0 +1,37 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: inherit;
+  padding: 20px 30px;
+}
+
+.header__logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header__icon-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.header__logo-link {
+  color: #272727;
+  font-family: "Inter", sans-serif;
+  margin-left: 30px;
+}
+
+.header__user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__user-username {
+  font-family: "Poppins", sans-serif;
+  color: #272727;
+  margin-right: 30px;
+}
