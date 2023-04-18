@@ -2,9 +2,11 @@ type ButtonProps = {
   border: string;
   color: string;
   cursor: string;
+  fontFamily?: string;
   fontSize?: string;
   fontColor?: string;
   height: string;
+  margin?: string;
   onClick?: () => void;
   radius?: string;
   text: string;
@@ -16,9 +18,11 @@ const Button = ({
   border,
   color,
   cursor,
+  fontFamily,
   fontSize,
   fontColor,
   height,
+  margin,
   onClick,
   radius,
   text,
@@ -34,8 +38,10 @@ const Button = ({
         backgroundColor: color,
         borderRadius: radius,
         height: height,
+        margin: margin,
         width: width,
         cursor: cursor,
+        fontFamily: fontFamily,
         fontSize: fontSize,
         color: fontColor,
       }}
