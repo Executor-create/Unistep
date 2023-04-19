@@ -1,0 +1,23 @@
+.card {
+  border-radius: 20px;
+  width: 250px;
+  height: 270px;
+  background-color: var(--tertiary-color);
+  text-align: center;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card__title {
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.card__link {
+  color: #000000;
+}
