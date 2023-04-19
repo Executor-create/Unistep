@@ -1,0 +1,31 @@
+.lesson__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.lesson__description {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  inline-size: 700px;
+  white-space: pre-line;
+}
+
+.lesson__details-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 60px;
+}
+
+.lesson__details-wrapper img {
+  float: left;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.lesson__button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
