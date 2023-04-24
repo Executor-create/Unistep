@@ -10,7 +10,7 @@ const SidebarData = (): Item[] => {
     { path: "/journal", name: "Journal" },
     { path: "/chat", name: "Chat" },
     { path: "/schedule", name: "Schedule" },
-    { path: "/signup", name: "Sign in" },
+    { path: "/signin", name: "Sign in" },
   ];
 
   return items;

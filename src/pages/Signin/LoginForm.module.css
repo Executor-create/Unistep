@@ -1,0 +1,52 @@
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 600px;
+  width: 400px;
+  border-radius: 40px;
+  background-color: var(--quaternary-color);
+}
+
+.form__title {
+  text-align: center;
+  color: #ffffff;
+}
+
+.form__input {
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form__label {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 5px;
+  inline-size: 300px;
+  white-space: pre-line;
+}
+
+.form__signup-text {
+  color: #ffffff;
+}
+
+.form__signup-link {
+  color: #ffffff;
+  text-decoration: underline;
+  margin-left: 5px;
+}
