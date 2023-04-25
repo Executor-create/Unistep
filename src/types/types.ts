@@ -1,7 +1,7 @@
 export type FormValues = {
   email: string;
   password: string;
-  name: string;
+  username: string;
   number: string;
   birthday: string;
 };

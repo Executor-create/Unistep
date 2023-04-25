@@ -1,14 +1,14 @@
 import { UseFormRegister, FieldErrors } from "react-hook-form";
 import { FormValues } from "../../../types/types";
 import Input from "../../../components/common/Input";
-import styles from "./ProfileFormInputs.module.css";
+import styles from "./SignupFormInputs.module.css";
 
-type ProfileFormInputsProps = {
+type SignupFormInputsProps = {
   register: UseFormRegister<FormValues>;
   errors: FieldErrors<FormValues>;
 };
 
-const ProfileFormInputs = ({ register, errors }: ProfileFormInputsProps) => {
+const SignupFormInputs = ({ register, errors }: SignupFormInputsProps) => {
   return (
     <div>
       <div className={styles.form__group}>
@@ -16,66 +16,68 @@ const ProfileFormInputs = ({ register, errors }: ProfileFormInputsProps) => {
           className={styles.form__input}
           labelClassName={styles.form__label}
           type="text"
-          placeholder="Name"
+          placeholder="Username"
           label="username"
           register={register}
           rules={{
             required: {
               value: true,
-              message: "Name is required",
+              message: "Username is require",
             },
             pattern: {
-              value: /^[a-zA-Z]{2,8}$/,
-              message: "Please enter a valid name.",
+              value: /^[a-zA-Z0-9]+$/,
+              message: "Please enter a valid username.",
             },
           }}
           error={errors.username}
-        />
+        ></Input>
       </div>
       <div className={styles.form__group}>
         <Input
           className={styles.form__input}
           labelClassName={styles.form__label}
-          type="text"
-          placeholder="Number"
-          label="number"
+          type="email"
+          placeholder="Email"
+          label="email"
           register={register}
           rules={{
             required: {
               value: true,
-              message: "Number is required",
+              message: "Email is require",
             },
             pattern: {
-              value: /^\+?\d{1,3}\s?\d{3,4}\s?\d{4}$/,
-              message: "Please enter a valid number.",
+              value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+              message: "Please enter a valid email address.",
             },
           }}
-          error={errors.number}
-        />
+          error={errors.email}
+        ></Input>
       </div>
       <div className={styles.form__group}>
         <Input
           className={styles.form__input}
           labelClassName={styles.form__label}
-          type="text"
-          placeholder="Birthday"
-          label="birthday"
+          type="password"
+          placeholder="Password"
+          label="password"
           register={register}
           rules={{
             required: {
               value: true,
-              message: "Birthday is required",
+              message: "Password is require",
             },
             pattern: {
-              value: /^\d{4}-\d{2}-\d{2}$/,
-              message: "Please enter a valid birthday.",
+              value:
+                /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+              message:
+                "Must contain uppercase and lowercase letters and numbers, and at least one special character.",
             },
           }}
-          error={errors.birthday}
-        />
+          error={errors.password}
+        ></Input>
       </div>
     </div>
   );
 };
 
-export default ProfileFormInputs;
+export default SignupFormInputs;

@@ -6,6 +6,7 @@ import {
   FieldErrors,
 } from "react-hook-form";
 import { FormValues } from "../types/types";
+import { createUser } from "../api/auth";
 
 type useFormHandlerType = () => {
   register: UseFormRegister<FormValues>;
@@ -22,9 +23,8 @@ const useFormHandler: useFormHandlerType = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
-    console.log(data);
-    reset();
+  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+    await Promise.all([createUser<FormValues>(data), reset()]);
   };
 
   return {

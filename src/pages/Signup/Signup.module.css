@@ -1,0 +1,10 @@
+.signup {
+  width: 100%;
+}
+
+.signup__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

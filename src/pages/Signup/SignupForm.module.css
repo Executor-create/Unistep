@@ -11,16 +11,5 @@
 
 .form__title {
   font-family: "Inter", sans-serif;
-  text-align: center;
   color: #ffffff;
-}
-
-.form__signup-text {
-  color: #ffffff;
-}
-
-.form__signup-link {
-  color: #ffffff;
-  text-decoration: underline;
-  margin-left: 5px;
 }
