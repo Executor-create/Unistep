@@ -7,7 +7,7 @@
 
 .main {
   width: 100%;
-  height: 655px;
+  height: 100%;
 }
 
 .main__container {
@@ -29,4 +29,17 @@
   align-items: center;
   justify-content: space-between;
   height: 75vh;
+}
+
+@media screen and (max-width: 846px) {
+  .wrapper {
+    height: 100%;
+  }
+
+  .main__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
