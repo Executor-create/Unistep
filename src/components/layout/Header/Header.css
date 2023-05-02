@@ -35,3 +35,9 @@
   color: #272727;
   margin-right: 30px;
 }
+
+@media screen and (max-width: 562px) {
+  .header__user-username {
+    display: none;
+  }
+}
