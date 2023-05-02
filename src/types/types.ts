@@ -4,4 +4,11 @@ export type FormValues = {
   username: string;
   number: string;
   birthday: string;
+  avatar: string;
+};
+
+export type User = {
+  username: string;
+  email: string;
+  password: string;
 };
