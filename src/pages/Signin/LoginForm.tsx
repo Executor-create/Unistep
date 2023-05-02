@@ -5,10 +5,10 @@ import styles from "./LoginForm.module.css";
 import Button from "../../components/common/Button";
 
 const LoginForm = () => {
-  const { register, handleSubmit, onSubmit, errors } = useFormHandler();
+  const { register, handleSubmit, login, errors } = useFormHandler();
 
   return (
-    <form className={styles.form__wrapper}>
+    <form onSubmit={handleSubmit(login)} className={styles.form__wrapper}>
       <h1 className={styles.form__title}>Welcome to UniStep</h1>
       <SigninFormInputs register={register} errors={errors} />
       <Button
