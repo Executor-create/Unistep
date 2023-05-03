@@ -2,9 +2,10 @@ export type FormValues = {
   email: string;
   password: string;
   username: string;
-  number: string;
+  phone: string;
   birthday: string;
   avatar: string;
+  about: string;
 };
 
 export type User = {
