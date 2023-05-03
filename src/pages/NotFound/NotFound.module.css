@@ -23,3 +23,14 @@
   margin-bottom: 40px;
   font-family: "Poppins", sans-serif;
 }
+
+@media screen and (max-width: 578px) {
+  .wrapper__title {
+    font-size: 12em;
+  }
+
+  .wrapper__subtitle {
+    white-space: wrap;
+    text-align: center;
+  }
+}
