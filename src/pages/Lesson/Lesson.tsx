@@ -14,7 +14,7 @@ const Lesson = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Header username="Geralt of Rivia" openSidebar={setOpen} />
+      <Header openSidebar={setOpen} />
       <Sidebar open={isOpen} toggle={setOpen} />
       {lessonData && (
         <main className={styles.lesson}>
