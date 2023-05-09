@@ -34,8 +34,8 @@ export async function loginUser<User>(data: User) {
       throw new Error("Invalid email or password");
     }
 
-    await response.json();
+    return await response.json();
   } catch (error) {
-    throw error;
+    throw new Error("Invalid email or password");
   }
 }
