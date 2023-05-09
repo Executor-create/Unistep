@@ -1,7 +1,21 @@
 .list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   padding: 20px;
   justify-items: center;
+}
+
+@media screen and (max-width: 846px) {
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 612px) {
+  .list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
