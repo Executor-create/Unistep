@@ -1,24 +1,10 @@
-import {
-  useForm,
-  SubmitHandler,
-  UseFormRegister,
-  UseFormHandleSubmit,
-  FieldErrors,
-} from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { FormValues, User } from "../types/types";
-import { createUser, loginUser } from "../api/auth";
+import { FormValues } from "../types/types";
+import { signupUser, signinUser } from "../services/authService";
+import { updateUser } from "../api/userApi";
 
-type useFormHandlerType = () => {
-  register: UseFormRegister<FormValues>;
-  handleSubmit: UseFormHandleSubmit<FormValues>;
-  onSubmit: SubmitHandler<FormValues>;
-  login: SubmitHandler<FormValues>;
-  test: SubmitHandler<FormValues>;
-  errors: FieldErrors<FormValues>;
-};
-
-const useFormHandler: useFormHandlerType = () => {
+const useFormHandler = () => {
   const navigate = useNavigate();
 
   const {
@@ -29,16 +15,16 @@ const useFormHandler: useFormHandlerType = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = async (data: User) => {
-    await createUser<User>(data);
+  const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
+    await signupUser(data);
 
     reset();
     navigate("/signin");
   };
 
-  const login: SubmitHandler<FormValues> = async (data: User) => {
+  const login: SubmitHandler<FormValues> = async (data: any) => {
     try {
-      await loginUser<User>(data);
+      await signinUser(data);
 
       reset();
       navigate("/");
@@ -48,8 +34,11 @@ const useFormHandler: useFormHandlerType = () => {
     }
   };
 
-  const test: SubmitHandler<FormValues> = (data: FormValues) => {
-    console.log(data);
+  const updateUserHandler: SubmitHandler<FormValues> = async (
+    data: FormValues
+  ) => {
+    await updateUser(data);
+    console.log("User updated successfully:", data);
     reset();
   };
 
@@ -58,7 +47,7 @@ const useFormHandler: useFormHandlerType = () => {
     onSubmit,
     login,
     handleSubmit,
-    test,
+    updateUserHandler,
     errors,
   };
 };
