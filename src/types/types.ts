@@ -5,7 +5,7 @@ export type FormValues = {
   phone: string;
   birthday: string;
   avatar_url: string;
-  about: string;
+  bio: string;
 };
 
 export type User = {
