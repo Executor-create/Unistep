@@ -27,3 +27,13 @@ export const getTokenData = (): { user_id: string } | null => {
 
   return null;
 };
+
+export const logout = () => {
+  const accessToken = localStorage.getItem("token");
+
+  if (!accessToken) {
+    throw Error("Token is not found");
+  }
+
+  localStorage.removeItem("token");
+};
