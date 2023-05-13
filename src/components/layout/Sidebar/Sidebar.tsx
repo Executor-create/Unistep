@@ -22,11 +22,9 @@ const Sidebar = ({ open, toggle }: SidebarProps) => {
       <div>
         {items.map(({ path, name }, index) => {
           return (
-            <ul className={styles.sidebar__list}>
+            <ul className={styles.sidebar__list} key={index}>
               <Link className={styles.sidebar__link} to={path}>
-                <li className={styles.sidebar__item} key={index}>
-                  {name}
-                </li>
+                <li className={styles.sidebar__item}>{name}</li>
               </Link>
             </ul>
           );
