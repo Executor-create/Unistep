@@ -3,9 +3,10 @@ import { UseFormSetValue } from "react-hook-form";
 
 type UseUploadFileProps = {
   setValue: UseFormSetValue<any>;
+  inputName: string;
 };
 
-const useUploadFile = ({ setValue }: UseUploadFileProps) => {
+const useUploadFile = ({ setValue, inputName }: UseUploadFileProps) => {
   const [selectedFile, setSelectedFile] = useState<string | undefined>();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,14 +22,13 @@ const useUploadFile = ({ setValue }: UseUploadFileProps) => {
 
     reader.onload = () => {
       setSelectedFile(reader.result?.toString());
-      setValue("avatar_url", reader.result?.toString() || "");
+      setValue(inputName, reader.result?.toString() || "");
     };
   };
 
   return {
     selectedFile,
     handleFileChange,
-    convertToBase64,
   };
 };
 
