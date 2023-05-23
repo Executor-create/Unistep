@@ -1,6 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { HiX } from "react-icons/hi";
+import { logout } from "../../../services/authService";
 import SidebarData from "./SidebarData";
 import styles from "./Sidebar.module.css";
 
@@ -20,15 +20,17 @@ const Sidebar = ({ open, toggle }: SidebarProps) => {
         <HiX className={styles.sidebar__icon} onClick={toggle} />
       </div>
       <div>
-        {items.map(({ path, name }, index) => {
-          return (
-            <ul className={styles.sidebar__list} key={index}>
-              <Link className={styles.sidebar__link} to={path}>
-                <li className={styles.sidebar__item}>{name}</li>
-              </Link>
-            </ul>
-          );
-        })}
+        {items.map(({ path, name }, index) => (
+          <ul className={styles.sidebar__list} key={index}>
+            <Link
+              className={styles.sidebar__link}
+              to={path}
+              onClick={path === "/signin" ? logout : undefined}
+            >
+              <li className={styles.sidebar__item}>{name}</li>
+            </Link>
+          </ul>
+        ))}
       </div>
     </aside>
   );
