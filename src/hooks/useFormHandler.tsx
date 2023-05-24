@@ -12,6 +12,7 @@ const useFormHandler = () => {
     handleSubmit,
     reset,
     setError,
+    setValue,
     formState: { errors },
   } = useForm<FormValues>();
 
@@ -37,9 +38,11 @@ const useFormHandler = () => {
   const updateUserHandler: SubmitHandler<FormValues> = async (
     data: FormValues
   ) => {
+    const formData = new FormData();
+    formData.append("avatar_url", data.avatar_url[0]);
+
     await updateUser(data);
     console.log("User updated successfully:", data);
-    reset();
   };
 
   return {
@@ -49,6 +52,7 @@ const useFormHandler = () => {
     handleSubmit,
     updateUserHandler,
     errors,
+    setValue,
   };
 };
 
