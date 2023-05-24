@@ -45,12 +45,6 @@ const SigninFormInputs = ({ register, errors }: SigninFormInputsProps) => {
               value: true,
               message: "Password is require",
             },
-            pattern: {
-              value:
-                /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-              message:
-                "Must contain uppercase and lowercase letters and numbers, and at least one special character.",
-            },
           }}
           error={errors.password}
         ></Input>
