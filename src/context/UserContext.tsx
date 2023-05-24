@@ -4,6 +4,10 @@ import { User } from "../types/types";
 
 type CurrentUserContextType = {
   username: string;
+  phone: string;
+  birthday: string;
+  avatar_url: string;
+  bio: string;
 };
 
 export const CurrentUserContext = createContext<CurrentUserContextType | null>(
@@ -33,6 +37,10 @@ export const UserProvider = ({ children }: any) => {
 
   const currentUserContextValue: CurrentUserContextType = {
     username: user?.username || "",
+    phone: user?.phone || "",
+    birthday: user?.birthday || "",
+    avatar_url: user?.avatar_url || "",
+    bio: user?.bio || "",
   };
 
   return (
