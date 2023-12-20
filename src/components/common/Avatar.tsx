@@ -1,22 +1,26 @@
-import { Link } from "react-router-dom";
+import { CurrentUserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
 type AvatarProps = {
   altText?: string;
-  imageUrl?: string;
   size: string;
 };
 
-const Avatar = ({ altText, imageUrl, size }: AvatarProps) => {
+const Avatar = ({ altText, size }: AvatarProps) => {
+  const currentUser = useContext(CurrentUserContext);
+
   return (
-    <Link style={{ height: size }} to="/profile">
-      <img
-        src={imageUrl}
-        alt={altText}
-        width={size}
-        height={size}
-        style={{ borderRadius: "50%" }}
-      />
-    </Link>
+    <img
+      src={
+        currentUser?.avatar_url
+          ? currentUser.avatar_url
+          : "https://w7.pngwing.com/pngs/722/101/png-transparent-computer-icons-user-profile-circle-abstract-miscellaneous-rim-account.png"
+      }
+      alt={altText}
+      width={size}
+      height={size}
+      style={{ borderRadius: "50%", objectFit: "cover" }}
+    />
   );
 };
 

@@ -11,7 +11,7 @@ const Profile = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Header username="Geralt of Rivia" openSidebar={setOpen} />
+      <Header openSidebar={setOpen} />
       <Sidebar open={isOpen} toggle={setOpen} />
       <main className={styles.profile}>
         <div className={styles.profile__container}>

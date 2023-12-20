@@ -1,17 +1,7 @@
-.form__wrapper {
+.form__group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 600px;
-  width: 400px;
-  border-radius: 40px;
-  background-color: var(--quaternary-color);
-}
-
-.form__title {
-  text-align: center;
-  color: #ffffff;
+  padding: 10px;
 }
 
 .form__input {
@@ -25,12 +15,6 @@
 
 .form__input:focus {
   outline: none;
-}
-
-.form__group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
 }
 
 .form__label {

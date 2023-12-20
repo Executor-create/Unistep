@@ -1,7 +1,21 @@
 export type FormValues = {
   email: string;
   password: string;
-  name: string;
-  number: string;
+  username: string;
+  phone: string;
   birthday: string;
+  avatar_url: string;
+  bio: string;
+};
+
+export type User = {
+  user_id: string;
+  username: string;
+  email: string;
+  password: string;
+  phone: string;
+  birthday: string;
+  avatar_url: string;
+  bio: string;
+  token: string;
 };

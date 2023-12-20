@@ -1,15 +1,17 @@
-import React from "react";
 import { HiMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { CurrentUserContext } from "../../../context/UserContext";
+import { useContext } from "react";
 import Avatar from "../../common/Avatar";
 import "./Header.css";
 
 type HeaderProps = {
-  username: string;
   openSidebar: () => void;
 };
 
 const Header = (props: HeaderProps) => {
+  const currentUser = useContext(CurrentUserContext);
+
   return (
     <header className="header">
       <div className="header__container">
@@ -22,12 +24,14 @@ const Header = (props: HeaderProps) => {
           </Link>
         </div>
         <div className="header__user-profile">
-          <h2 className="header__user-username">{props.username}</h2>
-          <Avatar
-            imageUrl="https://assets.reedpopcdn.com/geralt_witcher.jpg/BROK/thumbnail/1200x1200/quality/100/geralt_witcher.jpg"
-            altText="img"
-            size="50px"
-          />
+          <h2 className="header__user-username">{currentUser?.username}</h2>
+          <Link style={{ height: "50px", borderRadius: "100%" }} to="/profile">
+            {currentUser?.avatar_url ? (
+              <Avatar altText="img" size="50px" />
+            ) : (
+              ""
+            )}
+          </Link>
         </div>
       </div>
     </header>

@@ -2,3 +2,9 @@
   height: 100vh;
   background-color: var(--secondary-color);
 }
+
+@media screen and (max-width: 846px) {
+  .wrapper {
+    height: 100%;
+  }
+}

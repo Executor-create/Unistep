@@ -1,15 +1,37 @@
-import React from "react";
-import useFormHandler from "../../hooks/useFormHandler";
-import styles from "./LoginForm.module.css";
-import Button from "../../components/common/Button";
-import Input from "../../components/common/Input";
+import { UseFormRegister, FieldErrors } from "react-hook-form";
+import { FormValues } from "../../../types/types";
+import Input from "../../../components/common/Input";
+import styles from "./SignupFormInputs.module.css";
 
-const LoginForm = () => {
-  const { register, handleSubmit, onSubmit, errors } = useFormHandler();
+type SignupFormInputsProps = {
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+};
 
+const SignupFormInputs = ({ register, errors }: SignupFormInputsProps) => {
   return (
-    <form className={styles.form__wrapper}>
-      <h1 className={styles.form__title}>Welcome to UniStep</h1>
+    <div>
+      <div className={styles.form__group}>
+        <Input
+          className={styles.form__input}
+          labelClassName={styles.form__label}
+          type="text"
+          placeholder="Username"
+          label="username"
+          register={register}
+          rules={{
+            required: {
+              value: true,
+              message: "Username is require",
+            },
+            pattern: {
+              value: /^[a-zA-Z0-9]+$/,
+              message: "Please enter a valid username.",
+            },
+          }}
+          error={errors.username}
+        ></Input>
+      </div>
       <div className={styles.form__group}>
         <Input
           className={styles.form__input}
@@ -54,21 +76,8 @@ const LoginForm = () => {
           error={errors.password}
         ></Input>
       </div>
-      <Button
-        onClick={handleSubmit(onSubmit)}
-        type="submit"
-        border="none"
-        radius="10px"
-        color="#4460A3"
-        height="50px"
-        width="150px"
-        cursor="pointer"
-        fontSize="18px"
-        fontColor="#ffffff"
-        text="Sign in"
-      ></Button>
-    </form>
+    </div>
   );
 };
 
-export default LoginForm;
+export default SignupFormInputs;

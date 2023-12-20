@@ -57,8 +57,8 @@ const HomeButtons = () => {
   return (
     <>
       {buttons.map((button, index) => (
-        <Link to={button.path}>
-          <Button key={index} {...button} />
+        <Link key={index} to={button.path}>
+          <Button {...button} />
         </Link>
       ))}
     </>

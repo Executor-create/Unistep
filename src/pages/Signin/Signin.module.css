@@ -1,0 +1,36 @@
+.signin {
+  width: 100%;
+  background-color: var(--secondary-color);
+  position: relative;
+  z-index: 10;
+}
+
+.signin__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.signin__img-decor {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.signin__img {
+  width: 100%;
+  height: 450px;
+}
+
+@media screen and (max-width: 846px) {
+  .signin__container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px 0;
+  }
+}
