@@ -1,10 +1,6 @@
 import Button from "../../../components/common/Button";
 import styles from "./ProfileFormButton.module.css";
 
-type ProfileFormButtonProps = {
-  onSubmit: () => void;
-};
-
 const ProfileFormButton = () => {
   return (
     <div className={styles["form__button-wrapper"]}>
