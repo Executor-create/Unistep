@@ -29,7 +29,7 @@
 @media screen and (max-width: 846px) {
   .signin__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     padding: 20px 0;
   }

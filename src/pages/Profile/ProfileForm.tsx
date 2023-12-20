@@ -1,41 +1,41 @@
 import styles from "./ProfileForm.module.css";
 import useFormHandler from "../../hooks/useFormHandler";
+import useUploadFile from "../../hooks/useUploadFile";
 import Avatar from "../../components/common/Avatar";
-import Button from "../../components/common/Button";
 import ProfileFormInputs from "./ProfileFormInputs/ProfileFormInputs";
 import ProfileFormTextarea from "./ProfileFormTextarea/ProfileFormTextarea";
 import ProfileFormButton from "./ProfileFormButton/ProfileFormButton";
 
 const ProfileForm = () => {
-  const { register, handleSubmit, onSubmit, errors } = useFormHandler();
+  const { register, handleSubmit, updateUserHandler, errors, setValue } =
+    useFormHandler();
+
+  const { handleFileChange } = useUploadFile({
+    setValue,
+    inputName: "avatar_url",
+  });
 
   return (
-    <form className={styles.form}>
+    <form onSubmit={handleSubmit(updateUserHandler)} className={styles.form}>
       <div className={styles.form__wrapper}>
         <div className={styles.avatar__wrapper}>
-          <Avatar
-            imageUrl="https://assets.reedpopcdn.com/geralt_witcher.jpg/BROK/thumbnail/1200x1200/quality/100/geralt_witcher.jpg"
-            altText="img"
-            size="150px"
-          />
-          <Button
-            type="submit"
-            border="none"
-            radius="20px"
-            color="var(--quaternary-color)"
-            height="30px"
-            margin="20px"
-            width="150px"
-            cursor="pointer"
-            fontSize="18px"
-            fontColor="#ffffff"
-            text="Change photo"
-          ></Button>
+          <Avatar altText="img" size="150px" />
+          <label className={styles.lab} htmlFor="file-upload">
+            Choose a file
+            <input
+              className={styles.lab__input}
+              type="file"
+              id="file-upload"
+              accept="image/*"
+              {...register("avatar_url")}
+              onChange={handleFileChange}
+            />
+          </label>
         </div>
         <ProfileFormInputs register={register} errors={errors} />
       </div>
-      <ProfileFormTextarea />
-      <ProfileFormButton onSubmit={handleSubmit(onSubmit)} />
+      <ProfileFormTextarea register={register} />
+      <ProfileFormButton />
     </form>
   );
 };

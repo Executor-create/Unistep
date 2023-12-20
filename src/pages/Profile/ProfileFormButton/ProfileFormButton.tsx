@@ -5,11 +5,10 @@ type ProfileFormButtonProps = {
   onSubmit: () => void;
 };
 
-const ProfileFormButton = ({ onSubmit }: ProfileFormButtonProps) => {
+const ProfileFormButton = () => {
   return (
     <div className={styles["form__button-wrapper"]}>
       <Button
-        onClick={onSubmit}
         type="submit"
         border="none"
         radius="10px"

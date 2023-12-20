@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Header username="Geralt of Rivia" openSidebar={setOpen} />
+      <Header openSidebar={setOpen} />
       <Sidebar open={isOpen} toggle={setOpen} />
       <main className={styles.main}>
         <div className={styles.main__container}>
