@@ -1,7 +1,7 @@
 {
+  "homepage": "http://executor-create.github.io/Unistep",
   "name": "unistep",
   "version": "0.1.0",
-  "homepage": "https://executor-create.github.io/Unistep",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -23,6 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.0",
     "prettier": "^2.8.7"
   },
   "scripts": {
